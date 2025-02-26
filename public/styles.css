@@ -10,12 +10,15 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
     color: #333;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
 /* Navbar */
 .navbar {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s; /* Aparece con un retraso */
 }
 
 .navbar .navbar-brand {
@@ -25,10 +28,22 @@ body {
 .navbar-nav .nav-link {
     color: #333;
     font-size: 1.1rem;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s; /* Animación para las opciones del menú */
 }
 
 .navbar-nav .nav-link:hover {
     color: #007bff;
+}
+
+/* Animación de FadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Sección de bienvenida */
@@ -40,7 +55,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.4); /* Filtro oscuro sobre el video */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #background-video {
@@ -50,29 +65,56 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(50%); /* Oscurece un poco el video */
+    filter: brightness(50%);
 }
 
 .hero h1 {
     font-size: 3rem;
     font-weight: 700;
+    animation: fadeInUp 1s forwards; /* Animación de aparición */
 }
 
 .hero .lead {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* Aparece después del título */
 }
 
 .hero .btn {
     padding: 10px 30px;
     font-size: 1.1rem;
     text-transform: uppercase;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Aparece después del texto */
+}
+
+.hero .btn:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Sección sobre mí */
 #about {
     padding: 60px 0;
     background-color: #f1f1f1;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s; /* Animación para la sección */
 }
 
 #about h2 {
@@ -101,10 +143,14 @@ body {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #333;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s;
 }
 
 .project-item {
     margin-bottom: 30px;
+    opacity: 0;
+    animation: slideIn 1s forwards 1.5s; /* Animación de entrada */
 }
 
 .project-item img {
@@ -130,6 +176,18 @@ body {
     margin-top: 10px;
 }
 
+/* Animación de SlideIn */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* Sección de servicios */
 #services {
     padding: 60px 0;
@@ -140,6 +198,8 @@ body {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #333;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.5s;
 }
 
 .service-item {
@@ -150,6 +210,8 @@ body {
     text-align: center;
     margin-bottom: 30px;
     transition: box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 2s; /* Animación de aparición */
 }
 
 .service-item:hover {
@@ -275,6 +337,7 @@ body {
     text-transform: uppercase;
     border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 #downloads a:hover {
@@ -290,43 +353,4 @@ footer {
 
 footer p {
     font-size: 1rem;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero .lead {
-        font-size: 1.2rem;
-    }
-
-    .project-item {
-        margin-bottom: 20px;
-    }
-
-    .service-item {
-        margin-bottom: 20px;
-    }
-
-    .service-item h4 {
-        font-size: 1.5rem;
-    }
-
-    .service-item p {
-        font-size: 1rem;
-    }
-
-    #experience h4, #education h4 {
-        font-size: 1.5rem;
-    }
-
-    #experience p, #education p {
-        font-size: 1rem;
-    }
-
-    #downloads a {
-        font-size: 1rem;
-    }
 }
