@@ -1,170 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-
-    <!-- Enlaces a bibliotecas externas -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi Portafolio Profesional</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Estilos personalizados -->
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif; /* Fuente principal */
-            background-color: #f8f9fa; /* Color de fondo */
-        }
-
-        .hero {
-            position: relative;
-            height: 100vh;
-            overflow: hidden; /* Evita que el video se desborde */
-        }
-
-        .hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 1;
-            transform: translate(-50%, -50%);
-            object-fit: cover; /* Ajusta el video al contenedor */
-        }
-
-        .hero-content {
-            position: relative; /* Para asegurar que el contenido esté por encima del video */
-            z-index: 2; /* Eleva el contenido sobre el video */
-            text-align: center;
-            color: white;
-        }
-
-        .project-item {
-            overflow: hidden; /* Asegura que la imagen no sobresalga */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
-        }
-
-        .project-item:hover {
-            transform: scale(1.05); /* Escala al pasar el ratón */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más intensa al hacer hover */
-        }
-
-        .section {
-            padding: 60px 0; /* Espaciado vertical */
-            opacity: 0; /* Oculto inicialmente para la animación */
-            transition: opacity 1s ease; /* Transición de opacidad */
-        }
-
-        .section.visible {
-            opacity: 1; /* Visible con fade-in */
-        }
-
-        .text-elegant {
-            font-family: 'Playfair Display', serif; /* Fuente para títulos */
-        }
-
-        .btn-primary {
-            transition: background-color 0.3s ease; /* Transición para el fondo del botón */
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3; /* Color de fondo al hacer hover */
-        }
-
-        footer {
-            background-color: #343a40; /* Color de fondo del footer */
-            color: white; /* Color del texto */
-            padding: 20px; /* Espaciado en el footer */
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Sombra en la parte superior del footer */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Si tienes un archivo CSS propio -->
 </head>
-<body>
 
+<body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Arq.</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#hero">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Sobre Mí</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Proyectos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contacto</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Mi Portafolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Mis Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experiencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Educación y Certificaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#social">Conecta conmigo</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="hero" class="hero d-flex justify-content-center align-items-center">
-        <video autoplay loop muted>
+    <!-- Sección de Bienvenida con Video de Fondo -->
+    <section id="home" class="hero d-flex align-items-center text-white" style="height: 100vh; position: relative;">
+        <video autoplay muted loop id="background-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
             <source src="./assets/background3.mp4" type="video/mp4">
-            Tu navegador no soporta video.
+            Tu navegador no soporta este formato de video.
         </video>
-        <div class="hero-content">
-            <h1 class="animate__animated animate__fadeInDown">Hola, soy [Tu Nombre]</h1>
-            <p class="animate__animated animate__fadeInUp">Desarrollador Web | Diseñador Gráfico</p>
-            <a href="#projects" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Ver Proyectos</a>
+        <div class="container text-center position-relative" style="z-index: 2;">
+            <h1 class="display-4">Hola, soy [Tu Nombre]</h1>
+            <p class="lead">Arquitecto | Diseñador Gráfico | Creativo Digital</p>
+            <a href="#about" class="btn btn-primary btn-lg">Descubre más</a>
         </div>
-    </header>
+    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
+    <!-- Sección Sobre Mí -->
+    <section id="about" class="section bg-light">
         <div class="container">
             <h2 class="text-center text-elegant">Sobre Mí</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <img src="./assets/people.jpg" alt="Perfil" class="img-fluid rounded-circle mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/people.jpg" alt="Mi foto" class="img-fluid rounded-circle">
                 </div>
-                <div class="col-md-8">
-                    <p>Descripción breve sobre ti. Habla sobre tus habilidades, experiencias y lo que te motiva.</p>
-                    <canvas id="skillsChart" width="400" height="200"></canvas> <!-- Gráfico de habilidades -->
+                <div class="col-md-6">
+                    <p>Soy un arquitecto y diseñador gráfico con más de 5 años de experiencia en la creación de espacios innovadores y soluciones visuales que combinan estética y funcionalidad. Mi pasión por el diseño me lleva a explorar continuamente nuevas tendencias y herramientas tecnológicas para ofrecer lo mejor a mis clientes.</p>
+                    <p>Me especializo en diseñar tanto ambientes físicos como digitales que generen experiencias memorables. Cada proyecto es una oportunidad para transformar ideas en realidad, y mi objetivo es siempre superar las expectativas de quienes confían en mi trabajo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Sección de Mis Proyectos -->
     <section id="projects" class="section bg-light">
         <div class="container">
             <h2 class="text-center text-elegant">Mis Proyectos</h2>
+            <p class="text-center">Aquí te muestro algunos de los proyectos más destacados que he realizado. Cada uno refleja mi creatividad, habilidades y dedicación a la excelencia en el diseño.</p>
             <div class="row">
+                <!-- Proyecto 1 -->
                 <div class="col-md-4">
-                    <div class="project-item position-relative">
-                        <img src="" alt="Proyecto 1" class="img-fluid">
-                        <div class="project-overlay text-white d-flex justify-content-center align-items-center">
-                            <h4>Proyecto 1</h4>
+                    <div class="project-item">
+                        <img src="assets/images/proyecto1.jpg" alt="Proyecto 1" class="img-fluid">
+                        <div class="project-details">
+                            <h4>Casa Modernista</h4>
+                            <p>Un diseño arquitectónico innovador para una residencia que combina estilo y funcionalidad.</p>
+                            <a href="proyectos/casa-modernista.html" class="btn btn-primary">Ver Proyecto</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Proyecto 2 -->
                 <div class="col-md-4">
-                    <div class="project-item position-relative">
-                        <img src="./assets/edif2.jpg" alt="Proyecto 2" class="img-fluid">
-                        <div class="project-overlay text-white d-flex justify-content-center align-items-center">
-                            <h4>Proyecto 2</h4>
+                    <div class="project-item">
+                        <img src="assets/images/proyecto2.jpg" alt="Proyecto 2" class="img-fluid">
+                        <div class="project-details">
+                            <h4>Restaurante Gourmet</h4>
+                            <p>Diseño interior y exterior de un restaurante enfocado en una experiencia gastronómica única.</p>
+                            <a href="proyectos/restaurante-gourmet.html" class="btn btn-primary">Ver Proyecto</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Proyecto 3 -->
                 <div class="col-md-4">
-                    <div class="project-item position-relative">
-                        <img src="./assets/edif3.jpg" alt="Proyecto 3" class="img-fluid">
-                        <div class="project-overlay text-white d-flex justify-content-center align-items-center">
-                            <h4>Proyecto 3</h4>
+                    <div class="project-item">
+                        <img src="assets/images/proyecto3.jpg" alt="Proyecto 3" class="img-fluid">
+                        <div class="project-details">
+                            <h4>Renovación de Oficina Corporativa</h4>
+                            <p>Un proyecto que transformó un espacio de trabajo tradicional en un entorno moderno y funcional.</p>
+                            <a href="proyectos/oficina-corporativa.html" class="btn btn-primary">Ver Proyecto</a>
                         </div>
                     </div>
                 </div>
@@ -172,96 +121,99 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
+    <!-- Sección de Servicios -->
+    <section id="services" class="section bg-light">
         <div class="container">
-            <h2 class="text-center text-elegant">Contacto</h2>
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="name">Nombre</label>
-                        <input type="text" class="form-control" id="name" placeholder="Tu Nombre" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="Tu Correo" required>
+            <h2 class="text-center text-elegant">Servicios</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h4>Diseño Arquitectónico</h4>
+                        <p>Creación de diseños arquitectónicos innovadores y sostenibles para todo tipo de proyectos.</p>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h4>Consultoría en Diseño Gráfico</h4>
+                        <p>Asesoramiento en el diseño de marca, identidad visual y material gráfico.</p>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h4>Gestión de Proyectos</h4>
+                        <p>Gestión integral de proyectos de diseño y construcción, asegurando calidad, tiempo y presupuesto.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Sección de Experiencia -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="text-center text-elegant">Mi Experiencia</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Arquitecto en [Nombre de la Empresa]</h4>
+                    <p><strong>Fechas:</strong> 2019 - Actualidad</p>
+                    <ul>
+                        <li>Diseño de proyectos residenciales y comerciales.</li>
+                        <li>Colaboración con un equipo multidisciplinario de arquitectos e ingenieros.</li>
+                        <li>Supervisión de obras de construcción en diversas etapas.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Diseñador Gráfico Freelance</h4>
+                    <p><strong>Fechas:</strong> 2017 - 2019</p>
+                    <ul>
+                        <li>Desarrollo de identidades visuales para marcas emergentes.</li>
+                        <li>Creación de materiales promocionales, desde folletos hasta campañas publicitarias completas.</li>
+                        <li>Colaboración con agencias para diseñar la experiencia del usuario en plataformas digitales.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Educación y Certificaciones -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="text-center text-elegant">Educación y Certificaciones</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Licenciatura en Arquitectura</h4>
+                    <p><strong>Universidad XYZ</strong> - 2014 - 2018</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Certificación en Diseño Sostenible</h4>
+                    <p><strong>Instituto ABC</strong> - 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Redes Sociales y Contacto -->
+    <section id="social" class="section bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="text-elegant">Conecta conmigo</h2>
+            <p>Sigue mis redes sociales o contáctame directamente para más información o para colaborar.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/tu-nombre" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.behance.net/tu-nombre" target="_blank" class="btn btn-primary"><i class="fab fa-behance"></i> Behance</a>
+                <a href="https://www.instagram.com/tu-nombre" target="_blank" class="btn btn-primary"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </section>
+
+   
     <!-- Footer -->
-    <footer class="text-center bg-dark text-white py-4">
-        <p>© 2025 Mi Portfolio. Todos los derechos reservados.</p>
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2025 Mi Portafolio Profesional. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Enlaces a scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Biblioteca Chart.js -->
-    <script>
-        // Script para el gráfico de habilidades
-        const ctx = document.getElementById('skillsChart').getContext('2d');
-        const skillsChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Diseño', 'Desarrollo', 'Gestión de Proyectos', 'Comunicación', 'Creatividad'],
-                datasets: [{
-                    label: 'Habilidades',
-                    data: [90, 80, 85, 75, 95], // Porcentajes de habilidades
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(75, 192, 192, 0.6)',
-                        'rgba(255, 206, 86, 0.6)',
-                        'rgba(153, 102, 255, 0.6)'
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(153, 102, 255, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // Fade-in Animation for sections
-        const sections = document.querySelectorAll('.section');
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible'); // Añade clase visible al entrar en vista
-                    observer.unobserve(entry.target); // Deja de observar la sección
-                }
-            });
-        }, options);
-
-        sections.forEach(section => {
-            observer.observe(section); // Observa cada sección
-        });
-    </script>
+    <!-- Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>

@@ -1,179 +1,332 @@
-/* Estilos Generales */
-body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
+/* Resetear márgenes y rellenos */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Color de fondo */
+    box-sizing: border-box;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif; /* Fuente para los títulos */
+/* Fondo y tipografía general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-.nav-container {
-    background-color: #333; /* Color de fondo de la navegación */
-    color: #fff; /* Color del texto */
-    padding: 10px 0;
-}
-
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: auto;
-    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.nav-links a {
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+.navbar .navbar-brand {
+    font-weight: bold;
 }
 
-.nav-links a:hover {
-    background-color: #555; /* Color de fondo al pasar el mouse */
+.navbar-nav .nav-link {
+    color: #333;
+    font-size: 1.1rem;
 }
 
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Sección de bienvenida */
 .hero {
-    background: url('./assets/hero-bg.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    position: relative;
+    height: 100vh;
     color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.btn {
-    background-color: #007bff; /* Color del botón */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #0056b3; /* Color al pasar el mouse */
-}
-
-.profile-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
-    margin: 40px auto;
-}
-
-.profile-image {
-    border-radius: 50%; /* Imagen de perfil redonda */
-    width: 150px;
-    height: 150px;
-    margin-right: 20px;
-}
-
-.profile-info {
-    max-width: 600px;
-}
-
-.profile-info h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.section {
-    padding: 60px 20px;
-    background-color: #fff; /* Color de fondo de las secciones */
-    margin: 20px 0;
-}
-
-.section h2 {
     text-align: center;
-    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.4); /* Filtro oscuro sobre el video */
 }
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.skill {
-    background-color: #007bff; /* Color de las habilidades */
-    color: #fff;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-.project-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.project-item {
-    position: relative;
-    margin: 15px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.project-item:hover {
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
-}
-
-.project-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.project-overlay {
+#background-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s;
+    object-fit: cover;
+    filter: brightness(50%); /* Oscurece un poco el video */
 }
 
-.project-item:hover .project-overlay {
-    opacity: 1; /* Mostrar overlay al pasar el mouse */
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
 }
 
-.contact-container {
-    text-align: center;
-}
-
-.contact-info h3 {
+.hero .lead {
+    font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
+.hero .btn {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+/* Sección sobre mí */
+#about {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#about img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sección de proyectos */
+#projects {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.project-item {
+    margin-bottom: 30px;
+}
+
+.project-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-item img:hover {
+    transform: scale(1.05);
+}
+
+.project-details h4 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.project-details p {
+    margin-bottom: 10px;
+}
+
+.project-details .btn {
+    margin-top: 10px;
+}
+
+/* Sección de servicios */
+#services {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.service-item {
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h4 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Sección de experiencia */
+#experience {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+#experience h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#experience h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+#experience p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#experience ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#experience ul li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Sección de educación y certificaciones */
+#education {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+#education h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#education h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+#education p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Sección de redes sociales */
+#social {
+    padding: 60px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+#social h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+#social .btn {
+    padding: 10px 30px;
+    margin: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+#social .social-icons {
+    margin-top: 30px;
+}
+
+#social .social-icons a {
+    margin: 0 15px;
+    color: #fff;
+}
+
+#social .social-icons a:hover {
+    color: #007bff;
+}
+
+/* Sección de descarga */
+#downloads {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#downloads h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#downloads a {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    margin: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#downloads a:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
+    .hero h1 {
+        font-size: 2.5rem;
     }
-    
-    .profile-container {
-        flex-direction: column;
-        text-align: center;
+
+    .hero .lead {
+        font-size: 1.2rem;
     }
-    
-    .profile-image {
+
+    .project-item {
         margin-bottom: 20px;
+    }
+
+    .service-item {
+        margin-bottom: 20px;
+    }
+
+    .service-item h4 {
+        font-size: 1.5rem;
+    }
+
+    .service-item p {
+        font-size: 1rem;
+    }
+
+    #experience h4, #education h4 {
+        font-size: 1.5rem;
+    }
+
+    #experience p, #education p {
+        font-size: 1rem;
+    }
+
+    #downloads a {
+        font-size: 1rem;
     }
 }
