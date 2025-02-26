@@ -227,27 +227,49 @@ body {
     font-size: 1.1rem;
     color: #555;
 }
-
 /* Sección de experiencia */
 #experience {
+    position: relative;  /* Necesario para posicionar el pseudo-elemento */
     padding: 60px 0;
-    background-color: #fff;
+    background-color: #000000;
+    background-image: url('./assets/images/outside.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
+#experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(65, 62, 62, 0.749);  /* Capa semitransparente */
+    z-index: 1;  /* Asegura que la capa esté detrás del contenido */
+    filter: contrast(0.6);  /* Reduce el contraste de la imagen */
+}
+
+#experience > * {
+    position: relative;
+    z-index: 2;  /* Esto asegura que el texto quede por encima de la capa */
+}
+
+/* Estilos de los textos */
 #experience h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #333;
+    color: #ffffff; /* Color del título */
 }
 
 #experience h4 {
     font-size: 1.8rem;
     margin-bottom: 15px;
+    color: #fff; /* Color del subtítulo */
 }
 
 #experience p {
     font-size: 1.1rem;
-    color: #555;
+    color: #dedede; /* Color del párrafo */
 }
 
 #experience ul {
@@ -257,36 +279,62 @@ body {
 
 #experience ul li {
     font-size: 1.1rem;
-    color: #555;
+    color: #f6f5f5; /* Color de los ítems de la lista */
     margin-bottom: 10px;
 }
 
 /* Sección de educación y certificaciones */
 #education {
+    position: relative;  /* Necesario para posicionar el pseudo-elemento */
     padding: 60px 0;
     background-color: #f1f1f1;
+    background-image: url('./assets/images/mar.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
+#education::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);  /* Capa semitransparente */
+    z-index: 1;  /* Asegura que la capa esté detrás del contenido */
+    filter: contrast(0.6);  /* Reduce el contraste de la imagen */
+}
+
+#education > * {
+    position: relative;
+    z-index: 2;  /* Asegura que el texto quede por encima de la capa */
+}
+
+/* Estilos de los textos */
 #education h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #333;
+    color: #ffffff;  /* Color del título */
 }
 
 #education h4 {
     font-size: 1.8rem;
     margin-bottom: 15px;
+    color: #ffffff;  /* Color del subtítulo */
 }
 
 #education p {
     font-size: 1.1rem;
-    color: #555;
+    color: #f8f8f8;  /* Color del párrafo */
 }
+
+
+
 
 /* Sección de redes sociales */
 #social {
     padding: 60px 0;
-    background-color: #333;
+    background-color: #f6f4f4;
     color: #fff;
 }
 
@@ -316,41 +364,33 @@ body {
     color: #007bff;
 }
 
-/* Sección de descarga */
-#downloads {
-    padding: 60px 0;
-    text-align: center;
-}
-
-#downloads h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-#downloads a {
-    padding: 10px 30px;
-    font-size: 1.1rem;
-    margin: 10px;
-    background-color: #007bff;
-    color: #fff;
-    text-transform: uppercase;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-#downloads a:hover {
-    background-color: #0056b3;
-}
 
 /* Footer */
 footer {
+    position: relative; /* Para manejar el overlay */
     background-color: #333;
+    background-image: url('./assets/images/fuego_2.jpg');
     color: #fff;
     padding: 30px 0;
+    background-size: cover;
+    background-position: center;
 }
 
+/* Agregar overlay para reducir el contraste del fondo */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.713); /* Color oscuro con transparencia */
+    z-index: 1; /* Para que el overlay esté por encima del fondo, pero debajo del texto */
+}
+
+/* Asegurarse de que el contenido de texto no se vea afectado */
 footer p {
     font-size: 1rem;
+    position: relative;
+    z-index: 2; /* El texto siempre estará encima del overlay */
 }
