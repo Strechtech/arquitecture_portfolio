@@ -1,0 +1,179 @@
+/* Estilos Generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo */
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Fuente para los títulos */
+}
+
+.nav-container {
+    background-color: #333; /* Color de fondo de la navegación */
+    color: #fff; /* Color del texto */
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: auto;
+    margin: auto;
+}
+
+.nav-links a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #555; /* Color de fondo al pasar el mouse */
+}
+
+.hero {
+    background: url('./assets/hero-bg.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #007bff; /* Color del botón */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.profile-image {
+    border-radius: 50%; /* Imagen de perfil redonda */
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+.profile-info {
+    max-width: 600px;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.section {
+    padding: 60px 20px;
+    background-color: #fff; /* Color de fondo de las secciones */
+    margin: 20px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skill {
+    background-color: #007bff; /* Color de las habilidades */
+    color: #fff;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-item {
+    position: relative;
+    margin: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1; /* Mostrar overlay al pasar el mouse */
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image {
+        margin-bottom: 20px;
+    }
+}
