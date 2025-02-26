@@ -254,6 +254,7 @@ body {
     font-size: 1.1rem;
     color: #555;
 }
+
 /* Sección de experiencia */
 #experience {
     position: relative;  /* Necesario para posicionar el pseudo-elemento */
@@ -354,6 +355,7 @@ body {
     font-size: 1.1rem;
     color: #f8f8f8;  /* Color del párrafo */
 }
+
 /* Sección de redes sociales */
 #social {
     position: relative; /* Necesario para el pseudo-elemento */
@@ -406,7 +408,6 @@ body {
     color: #ffffff;
 }
 
-
 /* Footer */
 footer {
     position: relative; /* Para manejar el overlay */
@@ -435,4 +436,88 @@ footer p {
     font-size: 1rem;
     position: relative;
     z-index: 2; /* El texto siempre estará encima del overlay */
+}
+
+/* Diseño Responsivo */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .lead {
+        font-size: 1.2rem;
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .service-item {
+        width: 250px;
+        height: 350px;
+    }
+
+    .project-item img {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .lead {
+        font-size: 1rem;
+    }
+
+    .service-item {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .project-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    #about h2, #projects h2, #services h2, #experience h2, #education h2, #social h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero .lead {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .service-item {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
 }
